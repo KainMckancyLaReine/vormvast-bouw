@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vormvast Bouw. Aannemer voor nieuwbouw, renovatie en aanbouw. Bekijk de mogelijkheden en bereid uw aanvraag voor.">
+  <meta name="theme-color" content="#171918">
+  <title>Vormvast Bouw — Aannemer voor nieuwbouw, renovatie en aanbouw</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#inhoud">Naar de inhoud</a>
+  <header class="header">
+    <a class="brand" href="#" aria-label="Vormvast Bouw, startpagina"><span class="mark" aria-hidden="true"></span>VORMVAST<span class="brand-sub">BOUW</span></a>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false" hidden>Menu</button>
+    <nav id="nav" aria-label="Hoofdnavigatie">
+      <a href="#diensten">Diensten</a><a href="#projecten">Projecten</a><a href="#werkwijze">Werkwijze</a>
+    </nav>
+    <a class="header-cta" href="#contact">Project bespreken <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="inhoud">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <p class="eyebrow"><span></span> Aannemersbedrijf</p>
+        <h1 id="hero-title">Ruimte om<br>te <em>bouwen.</em></h1>
+        <p>Van een extra kamer tot een compleet nieuw huis. Wij brengen ontwerp, planning en uitvoering samen.</p>
+        <div class="actions"><a class="button" href="#contact">Bespreek uw bouwplan <span aria-hidden="true">↗</span></a><a class="light-link" href="#projecten">Bekijk de projecten <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+    <section id="diensten" class="wrap section">
+      <p class="eyebrow"><span></span> Diensten</p>
+      <h2>Wat wilt u bouwen?</h2>
+      <div class="services">
+        <article><span class="service-icon" aria-hidden="true">⌂</span><h3>Nieuwbouw</h3><p>Een woning vanaf de fundering, met aandacht voor materiaalkeuzes, isolatie en afwerking.</p><a href="#contact" data-service="Nieuwbouw">Bespreek nieuwbouw <span aria-hidden="true">↗</span></a></article>
+        <article><span class="service-icon" aria-hidden="true">◫</span><h3>Renovatie</h3><p>Een bestaande woning opnieuw indelen, verduurzamen of integraal verbouwen.</p><a href="#contact" data-service="Renovatie">Bespreek renovatie <span aria-hidden="true">↗</span></a></article>
+        <article><span class="service-icon" aria-hidden="true">⊞</span><h3>Aanbouw</h3><p>Meer ruimte voor koken, wonen of werken, afgestemd op uw huis en tuin.</p><a href="#contact" data-service="Aanbouw">Bespreek aanbouw <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+    <section id="projecten" class="projects section">
+      <div class="wrap">
+        <p class="eyebrow"><span></span> Projectinspiratie</p>
+        <h2>Bouwideeën in beeld.</h2>
+        <p class="intro">Twee concepten die laten zien wat er mogelijk is.</p>
+        <div class="project-grid">
+          <article><div class="project-image exterior" role="img" aria-label="Concept voor een moderne woning met natuursteen en grote ramen"></div><p class="caption">Nieuwbouw · Concept</p><h3>Wonen rond de tuin</h3><p>Een gelijkvloerse woning met zichtlijnen naar buiten en een gevel van natuursteen.</p></article>
+          <article><div class="project-image extension" role="img" aria-label="Concept voor een houten aanbouw met glazen tuindeuren"></div><p class="caption">Aanbouw · Concept</p><h3>Meer licht aan huis</h3><p>Een houten uitbreiding met hoge glaspartijen die de keuken op de tuin laat aansluiten.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="werkwijze" class="wrap section method">
+      <div><p class="eyebrow"><span></span> Werkwijze</p><h2>Van eerste gesprek<br>tot oplevering.</h2></div>
+      <ol>
+        <li><h3>Kennismaken</h3><p>We bespreken uw wensen, locatie en budget en bekijken welke informatie nog nodig is.</p></li>
+        <li><h3>Plan en offerte</h3><p>We leggen de werkzaamheden, materiaalkeuzes en planning vast en maken de kosten inzichtelijk.</p></li>
+        <li><h3>Bouwen en opleveren</h3><p>We houden u op de hoogte tijdens de uitvoering en lopen het resultaat bij oplevering samen na.</p></li>
+      </ol>
+    </section>
+    <section id="contact" class="contact section">
+      <div class="wrap contact-grid">
+        <div><p class="eyebrow"><span></span> Uw bouwplan</p><h2>Waar kunnen we<br>mee helpen?</h2><p>Beschrijf uw project. Download daarna uw aanvraag om die zelf te delen.</p></div>
+        <form id="aanvraag">
+          <div class="field-row"><label>Uw naam<input name="naam" autocomplete="name" required maxlength="100"></label><label>E-mailadres<input type="email" name="email" autocomplete="email" required maxlength="254"></label></div>
+          <label>Type werkzaamheden<select name="dienst" id="dienst" required><option value="">Kies een dienst</option><option>Nieuwbouw</option><option>Renovatie</option><option>Aanbouw</option><option>Anders</option></select></label>
+          <label>Uw bouwplan<textarea name="omschrijving" rows="4" required maxlength="3000" placeholder="Bijvoorbeeld de locatie en wat u wilt laten bouwen."></textarea></label>
+          <button class="button" type="submit">Download mijn aanvraag <span aria-hidden="true">↓</span></button>
+          <p class="status" id="formulier-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#"><span class="mark" aria-hidden="true"></span>VORMVAST<span class="brand-sub">BOUW</span></a><p>Voorbeeldwebsite · Fictief aannemersbedrijf</p><a href="#">Terug naar boven ↑</a></footer>
+</body>
+</html>
