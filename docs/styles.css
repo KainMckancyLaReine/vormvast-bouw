@@ -9,13 +9,13 @@
 @media(max-width:400px){.field-row{grid-template-columns:1fr;gap:0}}
 
 .tour { background: #252720; color: var(--paper); }
-.tour[data-active] { height: 295svh; }
+.tour[data-active] { height: 340svh; }
 .tour-stage {
   position: relative;
   isolation: isolate;
   min-height: min(76svh, 660px);
   display: flex;
-  background: #252720 url("./assets/extension.jpg") center / cover no-repeat;
+  background: #252720 url("./assets/hero.jpg") center / cover no-repeat;
   overflow: hidden;
 }
 .tour[data-active] .tour-stage { position: sticky; top: 0; height: 100svh; }
@@ -42,10 +42,13 @@
 .tour-details { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .tour-details a { margin-left: auto; padding: 10px 0; border-bottom: 1px solid #e8edce80; }
 .tour-details a:hover { color: var(--lime); }
-.tour-track { display: block; width: clamp(48px, 13vw, 175px); height: 2px; background: #e8edce65; }
+.tour-track { display: block; width: clamp(32px, 11vw, 150px); height: 2px; background: #e8edce65; }
 .tour-track span { display: block; height: 100%; background: var(--lime); transform: scaleX(0); transform-origin: left; }
 .tour-progress, .tour-details a { font-size: .8rem; font-weight: 700; }
 @media (max-width: 760px) {
   .tour-shade { background: linear-gradient(180deg, #151713db, #15171324 53%, #151713e3); }
   .tour-content { padding-top: 52px; }
 }
+
+.tour-caption { color: var(--lime); margin-inline-start: 4px; }
+@media (max-width: 390px) { .tour-details { gap: 8px; } .tour[data-active] .tour-progress { gap: 7px; } }

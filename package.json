@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit && esbuild src/main.ts --bundle --splitting --format=esm --target=es2022 --minify --legal-comments=linked --outdir=docs --chunk-names=chunks/[name]"
+    "build": "tsc --noEmit && esbuild src/main.ts --bundle --splitting --format=esm --target=es2022 --minify --legal-comments=linked --outdir=docs --chunk-names=chunks/[name]-[hash]"
   },
   "devDependencies": {
     "@types/three": "0.187.0",

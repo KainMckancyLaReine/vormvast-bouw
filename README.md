@@ -12,7 +12,7 @@ npm run build
 python3 -m http.server 8000 --bind 127.0.0.1 --directory docs
 ```
 
-Open http://127.0.0.1:8000/. De algemene interacties staan in `src/main.ts`. De GSAP-animaties staan in `src/motion.ts` en de Three.js-woningtour in `src/room.ts`. De tour laadt wanneer de bezoeker de sectie nadert. Met verminderde beweging of zonder WebGL verschijnt een statisch projectbeeld.
+Open http://127.0.0.1:8000/. De algemene interacties staan in `src/main.ts`. De GSAP-animaties staan in `src/motion.ts` en de fotorealistische Three.js-woningtour in `src/room.ts`. De tour begint met de bestaande gevelfoto. Drie gegenereerde perspectieven reconstrueren de entree, woonruimte en binnentuin van het woningconcept. De tour laadt wanneer de bezoeker de sectie nadert. Met verminderde beweging of zonder WebGL verschijnt een statisch projectbeeld.
 
 ## GitHub Pages
 

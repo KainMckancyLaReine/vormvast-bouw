@@ -30,19 +30,30 @@ export function setupMotion(): void {
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
       observer.disconnect();
-      void import("./room").then(({ createRoom }) => {
+      void import("./room").then(async ({ createRoom }) => {
         if (!active) return;
-        const room = createRoom(canvas);
+        const room = await createRoom(canvas);
         if (!room) return;
+        if (!active) {
+          room.dispose();
+          return;
+        }
 
         tour.setAttribute("data-active", "");
         const progress = { value: 0 };
         const indicator = tour.querySelector<HTMLElement>(".tour-track span");
         const number = tour.querySelector<HTMLElement>(".tour-number");
+        const caption = tour.querySelector<HTMLElement>(".tour-caption");
+        const chapters = ["Voorgevel", "Entree", "Woonruimte", "Binnentuin"];
+        let chapter = -1;
         const readout = () => {
           room.draw(progress.value);
           if (indicator) indicator.style.transform = `scaleX(${progress.value})`;
-          if (number) number.textContent = `0${Math.min(3, 1 + Math.floor(progress.value * 3))}`;
+          const nextChapter = Math.min(chapters.length - 1, Math.floor(progress.value * chapters.length + 0.075));
+          if (chapter === nextChapter) return;
+          chapter = nextChapter;
+          if (number) number.textContent = `0${chapter + 1}`;
+          if (caption) caption.textContent = chapters[chapter];
         };
         room.resize();
         const flight = gsap.to(progress, {
