@@ -7,3 +7,45 @@
 .services{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);margin-top:48px}.services article{padding:28px clamp(20px,3vw,42px);border-right:1px solid var(--line)}.services article:first-child{padding-left:0}.services article:last-child{border:0}.service-icon{display:block;font-size:2.25rem;margin-bottom:23px;color:#4d6020}.services p,.project-grid p,.method p,.intro{color:var(--mute)}.services a{display:inline-flex;gap:10px;text-decoration:underline;text-underline-offset:4px;font-weight:800;font-size:.88rem}.projects{background:#eaece3}.project-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:35px}.project-image{aspect-ratio:1.6;background:#555b4d center/cover no-repeat}.exterior{background-image:url("./assets/hero.jpg")}.extension{background-image:url("./assets/extension.jpg")}.caption{font-size:.77rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-top:18px}.method,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px)}.method ol{margin:0;padding-left:30px}.method li{padding:20px 0 14px 12px;border-top:1px solid var(--line)}.method li::marker{font-weight:800;color:#4d6020}.contact{background:var(--dark);color:var(--paper)}.contact p:not(.eyebrow){color:#cbcfc3}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:8px;margin-bottom:16px;font-weight:700;font-size:.9rem}input,select,textarea{min-width:0;width:100%;padding:12px;background:#292d28;color:var(--paper);border:1px solid #777d70;border-radius:0}textarea{resize:vertical}textarea::placeholder{color:#b7bcaf}.status{margin-top:12px}.status:empty{display:none}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:30px;font-size:.82rem}.footer p{margin:0}.footer .mark{background:#596c24}
 @media(max-width:760px){.wrap{width:calc(100% - 40px)}.header{flex-wrap:wrap;gap:12px;padding:16px 20px;min-height:0}.header-cta{display:none}nav{width:100%;justify-content:space-between;gap:12px}nav[data-collapsed]{display:none}.hero{background-position:60% center}.hero-inner{padding-block:60px}.services,.project-grid,.method,.contact-grid{grid-template-columns:1fr}.services article,.services article:first-child{border:0;border-bottom:1px solid var(--line);padding:23px 0}.services article:last-child{border:0}.footer{flex-wrap:wrap}.project-image{aspect-ratio:1.5}}
 @media(max-width:400px){.field-row{grid-template-columns:1fr;gap:0}}
+
+.tour { background: #252720; color: var(--paper); }
+.tour[data-active] { height: 295svh; }
+.tour-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: min(76svh, 660px);
+  display: flex;
+  background: #252720 url("./assets/extension.jpg") center / cover no-repeat;
+  overflow: hidden;
+}
+.tour[data-active] .tour-stage { position: sticky; top: 0; height: 100svh; }
+.tour-canvas, .tour-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tour-canvas { display: none; }
+.tour[data-active] .tour-canvas { display: block; }
+.tour-shade {
+  pointer-events: none;
+  background: linear-gradient(90deg, #151713d9, #1517134c 54%, transparent 85%),
+    linear-gradient(0deg, #151713d9, transparent 26%);
+}
+.tour-content {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  gap: 48px;
+  padding-block: clamp(38px, 10svh, 105px) 32px;
+}
+.tour-content h2 { font-size: clamp(3rem, 7.6vw, 8rem); margin-bottom: 18px; }
+.tour-content .eyebrow span { background: var(--lime); }
+.tour-prompt, .tour-progress { display: none; }
+.tour[data-active] .tour-prompt { display: block; }
+.tour[data-active] .tour-progress { display: flex; align-items: center; gap: 12px; }
+.tour-details { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.tour-details a { margin-left: auto; padding: 10px 0; border-bottom: 1px solid #e8edce80; }
+.tour-details a:hover { color: var(--lime); }
+.tour-track { display: block; width: clamp(48px, 13vw, 175px); height: 2px; background: #e8edce65; }
+.tour-track span { display: block; height: 100%; background: var(--lime); transform: scaleX(0); transform-origin: left; }
+.tour-progress, .tour-details a { font-size: .8rem; font-weight: 700; }
+@media (max-width: 760px) {
+  .tour-shade { background: linear-gradient(180deg, #151713db, #15171324 53%, #151713e3); }
+  .tour-content { padding-top: 52px; }
+}

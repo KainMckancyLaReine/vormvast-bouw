@@ -62,3 +62,7 @@ if (form && formStatus) {
     formStatus.textContent = "Uw aanvraag is klaar om te delen. Controleer uw downloads.";
   });
 }
+
+void import("./motion").then(({ setupMotion }) => setupMotion()).catch((error: unknown) => {
+  console.warn("De interactieve animatie kon niet worden geladen.", error);
+});

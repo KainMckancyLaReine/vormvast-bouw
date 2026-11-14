@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --project tsconfig.json"
+    "build": "tsc --noEmit && esbuild src/main.ts --bundle --splitting --format=esm --target=es2022 --minify --legal-comments=linked --outdir=docs --chunk-names=chunks/[name]"
   },
   "devDependencies": {
+    "@types/three": "0.187.0",
+    "esbuild": "0.28.2",
     "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "gsap": "3.15.1",
+    "three": "0.187.0"
   }
 }
