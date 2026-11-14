@@ -9,7 +9,7 @@
 @media(max-width:400px){.field-row{grid-template-columns:1fr;gap:0}}
 
 .tour { background: #252720; color: var(--paper); }
-.tour[data-active] { height: 340svh; }
+.tour[data-active] { height: 480svh; }
 .tour-stage {
   position: relative;
   isolation: isolate;

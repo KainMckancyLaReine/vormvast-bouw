@@ -44,7 +44,7 @@ export function setupMotion(): void {
         const indicator = tour.querySelector<HTMLElement>(".tour-track span");
         const number = tour.querySelector<HTMLElement>(".tour-number");
         const caption = tour.querySelector<HTMLElement>(".tour-caption");
-        const chapters = ["Voorgevel", "Entree", "Woonruimte", "Binnentuin"];
+        const chapters = ["Voorgevel", "Entree", "Woonruimte", "Doorloop", "Binnentuin"];
         let chapter = -1;
         const readout = () => {
           room.draw(progress.value);
@@ -58,7 +58,7 @@ export function setupMotion(): void {
         room.resize();
         const flight = gsap.to(progress, {
           value: 1, ease: "none", onUpdate: readout,
-          scrollTrigger: { trigger: tour, start: "top top", end: "bottom bottom", scrub: 0.8 },
+          scrollTrigger: { trigger: tour, start: "top top", end: "bottom bottom", scrub: 1.25 },
         });
         const resize = new ResizeObserver(() => room.resize());
         resize.observe(canvas);
@@ -77,7 +77,7 @@ export function setupMotion(): void {
         };
         canvas.addEventListener("webglcontextlost", handleContextLoss, { once: true });
       }).catch((error: unknown) => console.warn("3D-weergave is niet beschikbaar.", error));
-    }, { rootMargin: "350px 0px" });
+    }, { rootMargin: "550px 0px" });
     observer.observe(tour);
 
     return () => {
